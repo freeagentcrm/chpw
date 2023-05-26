@@ -107,7 +107,7 @@ GRAPHQL VARIABLES
       {
           "field_name": "alternate_phone_1",
           "operator": "equals",
-          "values": [{phone_number_string}]
+          "values": ["1234567890"]
       }
     ]
 }
