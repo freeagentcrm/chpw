@@ -208,7 +208,7 @@ GRAPHQL VARIABLES (optional)
 
 <summary> <h2>Entities in order of FreeAgent menu</h2> </summary>
 
-![Screenshot of CHPW FreeAgent Menu](<https://github.com/freeagentcrm/chpw/assets/1093667/507d9eb8-f9b5-4c8e-8f4c-26397eed2e41> width=50%)
+![Screenshot of CHPW FreeAgent Menu](https://github.com/freeagentcrm/chpw/assets/1093667/507d9eb8-f9b5-4c8e-8f4c-26397eed2e41 width=50%)
 
 ```json
 {
