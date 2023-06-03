@@ -2,18 +2,6 @@
 
 1. FreeAgent screen pop ANI (phone number) query results to answering agent
 
-   1. **FA API#1: Contact Query by Phone Number**
-      1. On single result - screen pop that contact's record in the agent's active web browser.
-      2. On multiple results - screen pop the FreeAGent search results page (assuming we can get some sort of URL from the API for the search page) in the agent's active browser.
-      3. On no results - create a new contact record for that customer and scree pop that record in the agent's active browser.
-         1. **FA AP#2: Create FreeAgent Contact Record**
-            1. Params needed for API call:
-               1. First Name - will always be 'TBD' because we don't know what customer's first name is
-               2. Agent Code
-                  1. **FA API #3: Agent Code query by Agent Email**
-                     1. Key Assumptions:
-                        1. the agent's email address will be the same in FreeAgent AND RingCentral
-                        2. there will be only 1 user associated with 1 email address
 
 ## **FreeAgent API**
 
@@ -31,7 +19,7 @@ POST https://freeagent.network/oauth/token
 ### Request Example
 
 ```bash
-curl --location 'POST https://freeagent.network/oauth/token' \
+curl --location 'POST https://staging2.freeagent.network/oauth/token' \
 --header 'Content-Type: application/json' \
 --data '{
     "grant_type": "client_credentials",
@@ -76,12 +64,14 @@ A GraphQL **query** is used to read or fetch values;
 a **mutation** is used to modify or delete values.
 
 ```http
-POST https://freeagent.network/api/graphql
+POST https://staging2.freeagent.network/api/graphql
 ```
 
 ---
 
-### FA API#1: **Query** Contact by Phone Number
+<details>
+
+<summary>FA API#1: <b>Query</b> Contact by Phone Number </summary>
 
 QUERY
 
@@ -113,10 +103,11 @@ GRAPHQL VARIABLES
 }
 ```
 
----
+</details>
 
-### FA AP#2: **Create** FreeAgent Contact Record
+<details>
 
+<summary>FA AP#2: <b>Create</b> FreeAgent Contact Record </summary>
 QUERY
 
 ```text
@@ -143,10 +134,11 @@ GRAPHQL VARIABLES
   }
 }
 ```
+</details>
 
----
+<details>
 
-### FA API #3: Query Agent Code by Agent Email
+<summary>FA API #3: <b>Query</b> Agent Code by Agent Email</summary>
 
 QUERY
 
@@ -178,7 +170,11 @@ GRAPHQL VARIABLES
 }
 ```
 
-## Query CHPW Apps (entities)
+</details>
+
+<details>
+
+<summary><b>Query</b> CHPW Apps (entities)</summary>
 
 QUERY
 
@@ -202,11 +198,7 @@ GRAPHQL VARIABLES (optional)
 }
 ```
 
-<details>
-
-</br>
-
-<summary> <h2>Entities in order of FreeAgent menu</h2> </summary>
+### Entities in order of FreeAgent menu
 
 ![Screenshot of CHPW FreeAgent Menu](https://github.com/freeagentcrm/chpw/assets/1093667/507d9eb8-f9b5-4c8e-8f4c-26397eed2e41)
 
@@ -360,3 +352,5 @@ GRAPHQL VARIABLES (optional)
 ```
 
 </details>
+
+---
